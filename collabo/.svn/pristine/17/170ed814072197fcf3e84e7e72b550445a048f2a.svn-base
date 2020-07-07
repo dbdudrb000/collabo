@@ -1,0 +1,13 @@
+package collabo.wato.springboot.web.hotPlace.service;
+
+import java.util.List;
+
+import collabo.wato.springboot.web.hotPlace.vo.AdministratorVO;
+import collabo.wato.springboot.web.hotPlace.vo.MemberVO;
+import collabo.wato.springboot.web.hotPlace.vo.PostVO;
+
+public interface MemberService {
+	
+	public List<MemberVO> selectMemberList() throws Exception;
+		
+}

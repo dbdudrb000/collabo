@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="/resources/css/hotplace/join.css">
+
+</head>
+<body bgcolor = "#ff7f00">
+	<form name = "joinForm" action = "joinLogic">
+		<div align = "center" style = "color: #00FFFF ;">
+			<caption><h1>회원가입 페이지</h1></caption>
+		</div>
+		<table align = "center">				
+			<div class="login" >
+    			<input type="text" placeholder="email 입력해주세요" id="email" name="email" required>  
+ 	    		<input type="password" placeholder="비밀번호 입력해주세요" id="password1" name="password1" required>
+ 	    		<input type = "password" placeholder = "다시 비밀번호 입력해주세요" id="password2" required> 
+ 	   			<input type = "text" placeholder = "닉네임입력" name = "nickname" required>
+ 	   			<input type = "text" placeholder = "주소입력" name = "address" required>	  			
+ 	 			<input type="button" value="가입" onclick = "join()">
+ 	 			<input type = "button" value = "메인으로"onclick = "location.href = '/mainView'">
+			</div>
+		<div class="shadow"></div>
+		</table>
+	</form>
+	<script>
+		function join(){
+			var pw1 = document.getElementById("password1").value;
+			var pw2 = document.getElementById("password2").value;
+			
+			if(pw1 != pw2){
+				alert("비밀번호가 다릅니다.")
+			}else{
+				joinForm.submit();
+			}
+		}
+	
+	</script>
+</body>
+</html>

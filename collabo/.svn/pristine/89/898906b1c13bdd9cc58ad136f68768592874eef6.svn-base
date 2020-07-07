@@ -1,0 +1,29 @@
+package collabo.wato.springboot.web.hotPlace;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import collabo.wato.springboot.web.hotPlace.service.DonghoService;
+
+@Controller
+public class HotplaceController {
+	
+	@Autowired
+	DonghoService service;
+	
+	@RequestMapping(value = "/dongho", method = RequestMethod.GET)
+	public String dongho(HttpServletResponse response, HttpServletRequest request) {
+		
+		System.out.println(service.young());
+		
+		request.setAttribute("donggu", service.young());
+		
+		return "main/main";
+	}
+	
+}

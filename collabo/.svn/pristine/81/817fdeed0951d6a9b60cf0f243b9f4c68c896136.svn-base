@@ -1,0 +1,22 @@
+package collabo.wato.springboot.web.member.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+import collabo.wato.springboot.web.member.vo.MemberVO;
+
+@Repository
+@Mapper
+public interface MemberMapper {
+
+	// �쉶�썝 議고쉶
+	List<MemberVO> getMember(MemberVO vo);
+	// �쉶�썝 媛��엯
+	public void insertMember(MemberVO vo);
+	// �쉶�썝 �닔�젙
+	public void updateMemeber(MemberVO vo);
+	// �쉶�썝 李⑤떒
+	public void preventMemeber(MemberVO vo);
+}

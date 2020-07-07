@@ -1,0 +1,42 @@
+package collabo.wato.springboot.web.hotPlace.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import collabo.wato.springboot.web.hotPlace.mapper.AdministratorMapper;
+import collabo.wato.springboot.web.hotPlace.mapper.MemberMapper;
+import collabo.wato.springboot.web.hotPlace.mapper.PostMapper;
+import collabo.wato.springboot.web.hotPlace.vo.AdministratorVO;
+import collabo.wato.springboot.web.hotPlace.vo.MemberVO;
+import collabo.wato.springboot.web.hotPlace.vo.PostVO;
+
+@Service
+public class DataServiceImpl implements DataService {
+
+	@Autowired
+	MemberMapper memberDao;
+
+	@Autowired
+	AdministratorMapper administratorDao;
+
+	@Autowired
+	PostMapper postDao;
+
+	@Override
+	public List<MemberVO> selectMemberList() throws Exception {
+		return memberDao.getMemberList();
+	}
+
+	@Override
+	public List<AdministratorVO> selectAdministratorList() throws Exception {
+		return administratorDao.getAdministratorList();
+	}
+
+	@Override
+	public List<PostVO> selectPostList() throws Exception {
+		return postDao.getPostList();
+	}
+
+}

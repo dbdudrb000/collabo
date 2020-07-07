@@ -1,0 +1,10 @@
+package collabo.wato.springboot.web.hotPlace.service;
+
+public class DonghoService {
+	
+	public String young() {
+		
+		return "young";
+	}
+
+}

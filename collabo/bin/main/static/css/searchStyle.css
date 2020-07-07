@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.searchdiv {
+    width: 630px;
+    border: 5px solid black;
+    padding: 0px;
+    margin: 0px;
+  }
+  .input {
+    width:500px;
+    height:35px;
+    font-size:20px;
+  }

@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="${contextPath}/resources/css/searchStyle.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/basic.css">
+</head>
+<body>
+
+    <section id = "explanation">
+
+        <h1>집단 인식 조사</h1>
+    
+        <p>당신이 현재 속해 있는 여러 집단 중 당신이 중요하게 여기는 집단 하나를 떠올려주십시오. (가족, 친지 제외)</p>
+        <div>
+            <p>집단은 고유한 특성을 가진 개개인이 모인 집합체입니다. 당신이 떠올린 집단의 대다수 사람들과 당신은 어떤 점에서 다른지 아래 빈 칸에 세 가지 이상 적어주십시오.</p>
+        </div>
+
+    </section>
+
+    <section id = "question1">
+
+        <form action="/action_page.php">
+            <label for="group1">1. 당신이 떠올린 집단은 무엇입니까?</label><br>
+            <input class="input" placeholder="1." type="text" id="fname" name="group1"><br>
+            <label for="difference">2. 당신이 떠올린 집단의 대다수 사람들과 당신은 어떤 점에서 다릅니까?</label><br>
+            <input class="input" placeholder="1." type="text" id="difference" name="difference"><br>
+            <input class="input" placeholder="2." type="text" id="difference2" name="difference"><br>
+            <input class="input" placeholder="3." type="text" id="difference3" name="difference"><br>
+            <input type="submit" value="Submit">
+          </form>
+
+    </section>
+    
+
+    <button type="button">다음</button>
+</body>
+</html>

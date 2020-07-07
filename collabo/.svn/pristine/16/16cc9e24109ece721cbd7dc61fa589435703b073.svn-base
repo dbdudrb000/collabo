@@ -1,0 +1,40 @@
+package collabo.wato.springboot.web.psy.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import collabo.wato.springboot.web.psy.mapper.PsyMapper;
+import collabo.wato.springboot.web.psy.vo.PsyVO;
+
+@Service
+public class PsyServiceImpl implements PsyService {
+
+	/**=====================================================================================
+	 * - 심리 테스트 관리 ( 등록,  수정,  삭제,  조회)
+	 * ===================================================================================== */
+	@Autowired
+	PsyMapper psyDAO;
+	
+//	@Autowired
+//	SqlSessionTemplate sqlSessionTemplate;
+	
+	/**
+	 * 심리 테스트
+	 * - 조회
+	 * */ 
+	@Override
+	public List<PsyVO> select(PsyVO vo) throws Exception {
+		return psyDAO.getPsyList(vo);
+	}
+	
+//	@Override
+//	public List<PsyVO> select(PsyVO vo) throws Exception {
+//		return sqlSessionTemplate.selectList("getPsyList",vo);
+//	}
+	
+
+}

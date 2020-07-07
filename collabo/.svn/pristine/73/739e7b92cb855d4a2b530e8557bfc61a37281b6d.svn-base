@@ -1,0 +1,32 @@
+package collabo.wato.springboot.web.hotPlace;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import collabo.wato.springboot.web.hotPlace.service.MemberService;
+import collabo.wato.springboot.web.hotPlace.vo.MemberVO;
+
+@Controller
+public class HotplaceController {
+	
+	@Autowired
+	MemberService dataService;
+	
+	@RequestMapping(value = "/hotplace", method = RequestMethod.GET)
+	public String dongho(HttpServletResponse response, HttpServletRequest request) throws Exception {
+		
+		List<MemberVO> membervoList = dataService.selectMemberList();
+		
+		request.setAttribute("data",membervoList );
+		
+		return "main/test";
+	}
+	
+}

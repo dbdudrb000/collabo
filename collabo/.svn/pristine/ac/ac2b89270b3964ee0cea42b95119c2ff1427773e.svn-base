@@ -1,0 +1,124 @@
+package collabo.wato.springboot.web.divideskill.service;
+
+import java.util.List;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import collabo.wato.springboot.web.divideskill.mapper.DivideMapper;
+import collabo.wato.springboot.web.divideskill.vo.DivideVO;
+
+
+@Service
+public class DivideServiceImpl implements DivideService{
+
+	@Autowired
+	DivideMapper mapper;
+	
+	@Override
+	public void insertDivide(DivideVO vo) throws Exception {
+		
+		 mapper.insertDivide(vo);	
+	}
+
+	@Override
+	public void upsertDivideMirror(DivideVO vo) throws Exception {
+		
+		mapper.upsertDivideMirror(vo);	
+	}
+
+	@Override
+	public List<DivideVO> selectDivide(DivideVO vo) throws Exception {
+		
+		return mapper.selectDivide(vo);
+	}
+
+	@Override
+	public void deleteDivide(DivideVO vo) throws Exception {
+		
+		mapper.deleteDivide(vo);
+	}
+
+	@Override
+	public void updateDivide(DivideVO vo) throws Exception {
+		
+		mapper.updateDivide(vo);
+	}
+
+	@Override
+	public List<DivideVO> selectDivideMirror(DivideVO vo) throws Exception {
+		
+		
+		return mapper.selectDivideMirror(vo);
+	}
+
+	@Override
+	public List<DivideVO> unlookStop(DivideVO vo) throws Exception {
+	
+		return mapper.unlookStop(vo);
+		
+	}
+
+	@Override
+	public void getCookieDivide(HttpServletRequest request, DivideVO vo) throws Exception {
+		// 쿠키값 가져오기
+	    Cookie[] cookies = request.getCookies();
+	    if(cookies != null){
+	        for(int i=0; i < cookies.length; i++){
+	            Cookie coo = cookies[i] ;
+	            // 저장된 쿠키 이름을 가져온다
+	            String cName = coo.getName();
+	            // 쿠키값을 가져온다
+	            String cValue = coo.getValue() ;
+	            System.out.println("cName : " + cName);
+	            System.out.println("cValue : " + cValue);
+	            if(cName.equals("cs_func_id")) {
+	            	if(cValue.equals(vo.getCs_func_id())){
+	            		// 조회수 X
+	            		
+	            	}else{
+	            		// 조회수 O
+	            		mapper.increaseView(vo);
+	            	}
+	            }
+	        }
+	    }
+	}
+
+	// 최초 좋아요 등록
+	@Override
+	public void insertLike(DivideVO vo) throws Exception {	
+		mapper.insertLike(vo);
+	}
+
+	// 좋아요 정보 조회
+	@Override
+	public List<DivideVO> selectLike(DivideVO vo) throws Exception {
+		
+		return mapper.selectLike(vo);
+	}
+
+	// 좋아요 삭제 하는 서비스
+	@Override
+	public void deleteLike(DivideVO vo) {
+		
+		mapper.deleteLike(vo);
+	}
+	
+	// 좋아요 증가시키는 service
+	@Override
+	public void plusLike(DivideVO vo)throws Exception {
+		
+		mapper.plusLike(vo);
+	}
+	// 좋아요 감소 시키는 service
+	@Override
+	public void minusLike(DivideVO vo) throws Exception {
+		System.out.println("좋아요 증가 service @@@@@@@@");
+		mapper.minusLike(vo);
+	}
+
+}

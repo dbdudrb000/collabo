@@ -1,0 +1,13 @@
+package collabo.wato.springboot.web.hotPlace.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class DonghoService {
+	
+	public String young() {
+		
+		return "young";
+	}
+
+}

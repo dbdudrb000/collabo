@@ -1,0 +1,37 @@
+package collabo.wato.springboot.web.board.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import collabo.wato.springboot.web.board.mapper.BoardMapper;
+import collabo.wato.springboot.web.board.vo.BoardVO;
+@Service
+public class BoardServiceImpl implements BoardService {
+
+	@Autowired
+	BoardMapper mapper;
+	
+	//議고쉶
+	@Override
+	public List<BoardVO> selectBoard(BoardVO vo) throws Exception {
+		return mapper.selectBoard(vo); 
+	}
+	//�벑濡�
+	@Override
+	public void insertBoard(BoardVO vo) throws Exception {
+		mapper.insertBoard(vo); 
+	}
+	//�닔�젙
+	@Override
+	public void updateBoard(BoardVO vo) throws Exception {
+		mapper.updateBoard(vo); 
+	}
+	//�궘�젣
+	@Override
+	public void deleteBoard(BoardVO vo) throws Exception {
+		mapper.deleteBoard(vo); 
+	}
+
+}

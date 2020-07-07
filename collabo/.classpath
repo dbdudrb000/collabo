@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin/main" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="bin/main" path="src/main/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="bin/test" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="bin/test" path="src/test/resources">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/access-bridge-64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/charsets.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/cldrdata.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/dnsns.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/jaccess.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/jce.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/jfr.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/jfxrt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/jsse.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/localedata.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/nashorn.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/resources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/rt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/sunec.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/sunjce_provider.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/sunmscapi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/sunpkcs11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/zipfs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dbdud/Desktop/스프링 외부라이브러리/json-simple-1.1.1.jar"/>
+	<classpathentry kind="output" path="bin/default"/>
+</classpath>

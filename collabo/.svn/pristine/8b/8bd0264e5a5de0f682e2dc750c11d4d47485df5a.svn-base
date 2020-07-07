@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="collabo.wato.springboot.web.board.mapper.BoardMapper">
+
+	<!-- 메모리 조회 -->
+	<select id="selectBoard" resultType="collabo.wato.springboot.web.board.vo.BoardVO" parameterType="collabo.wato.springboot.web.board.vo.BoardVO">
+		SELECT
+			 	boardid
+			,	board_address
+			,	latlng
+			,	title
+			,	detail
+			,	feeling
+			,	delyn
+			,	create_dt
+			,	create_user
+			,	update_dt
+			,	update_user
+		  FROM "Hotplace"."board"
+		  <where>
+		  			AND 1=1
+		  </where>
+	</select>
+
+	<!-- 메모리 등록 -->
+	<insert id="insertBoard" parameterType="collabo.wato.springboot.web.board.vo.BoardVO">
+		INSERT INTO "Hotplace"."board"
+		(
+			 	boardid
+			,	board_address
+			,	latlng
+			,	title
+			,	detail
+			,	feeling
+			,	delyn
+			,	create_dt
+			,	create_user
+		)
+		VALUES
+		(
+			 	(select count(boardid)+1 from "Hotplace".board)
+			,	#{board_address}
+			,	ARRAY[cast(NULLIF(#{lat},'') as numeric) , cast(NULLIF(#{lng},'') as numeric)]
+			,	#{title}
+			,	#{detail}
+			,	#{feeling}
+			,	'N'
+			,	now()
+			, 	#{create_user}
+		)
+				
+	</insert>
+	
+	<!-- 메모리 수정 -->
+	<update id="updateBoard" parameterType="collabo.wato.springboot.web.board.vo.BoardVO">
+		update "Hotplace"."board"
+			<set>
+				<if test="lat != '' and lng != null">
+					latlng = ARRAY[cast(NULLIF(#{lat},'') as numeric) , cast(NULLIF(#{lng},'') as numeric)],
+				</if>
+				<if test="board_address != '' and board_address != null">
+					board_address = #{board_address},
+				</if>
+				<if test="title != '' and title != null">
+					title = #{title},
+				</if>
+				<if test="detail != '' and detail != null">
+					detail = #{detail},
+				</if>
+				<if test="feeling != '' and feeling != null">
+					feeling = #{feeling},
+				</if>
+				<if test="nickname != '' and nickname != null">
+					nickname = #{nickname},
+				</if>
+				<if test="delyn != '' and delyn != null">
+					delyn = #{delyn},
+				</if>
+				update_dt = NOW(),
+				update_user = #{wato_user_id}
+			</set>
+			WHERE 1=1
+		  	  AND boardid = #{boardid}
+	</update>
+	
+	<!-- 메모리 삭제 -->
+	<update id="deleteBoard" parameterType="collabo.wato.springboot.web.board.vo.BoardVO">
+	
+		UPDATE "Hotplace"."board"
+		   SET delyn = 'N'
+		 WHERE 1=1
+		   AND boardid = #{boardid}
+	</update>
+
+</mapper>
+

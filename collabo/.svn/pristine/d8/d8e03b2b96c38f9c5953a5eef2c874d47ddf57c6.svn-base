@@ -1,0 +1,30 @@
+package collabo.wato.springboot.web.divideskill.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+import collabo.wato.springboot.web.divideskill.vo.DivideVO;
+
+@Repository
+@Mapper
+public interface DivideMapper {
+	// 기능 등록
+	public void insertDivide(DivideVO vo);
+	
+	// 기능 조회
+	public List<DivideVO> selectDivide(DivideVO vo);
+	
+	// 기능삭제
+	public void deleteDivide(DivideVO vo);
+	
+	// 기능 수정
+	public void updateDivide(DivideVO vo);
+
+	// 코드 등록
+	public void upsertDivideMirror(DivideVO vo);
+	
+	// 코드 조회
+	public List<DivideVO> selectDivideMirror(DivideVO vo);
+}

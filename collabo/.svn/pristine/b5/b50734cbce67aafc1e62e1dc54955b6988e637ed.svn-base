@@ -1,0 +1,102 @@
+package collabo.wato.springboot.web.divideskill.vo;
+
+public class DivideVO {
+	
+	private String cs_func_id = "";
+	private String title = "";
+	private String detail = "";
+	private String url = "";
+	private int var = 0;
+	private int cnt = 0;
+	private int cs_like = 0;
+	private String filepath = "";
+	private String delyn = "";
+	private String create_dt = "";
+	private String create_user = "";
+	private String update_dt = "";
+	private String update_user = "";
+	
+	
+	
+	public String getCs_func_id() {
+		return cs_func_id;
+	}
+	public void setCs_func_id(String cs_func_id) {
+		this.cs_func_id = cs_func_id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDetail() {
+		return detail;
+	}
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public int getVar() {
+		return var;
+	}
+	public void setVar(int var) {
+		this.var = var;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	
+	public int getCs_like() {
+		return cs_like;
+	}
+	public void setCs_like(int cs_like) {
+		this.cs_like = cs_like;
+	}
+	public String getFilepath() {
+		return filepath;
+	}
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
+	}
+	public String getDelyn() {
+		return delyn;
+	}
+	public void setDelyn(String delyn) {
+		this.delyn = delyn;
+	}
+	public String getCreate_dt() {
+		return create_dt;
+	}
+	public void setCreate_dt(String create_dt) {
+		this.create_dt = create_dt;
+	}
+	public String getCreate_user() {
+		return create_user;
+	}
+	public void setCreate_user(String create_user) {
+		this.create_user = create_user;
+	}
+	public String getUpdate_dt() {
+		return update_dt;
+	}
+	public void setUpdate_dt(String update_dt) {
+		this.update_dt = update_dt;
+	}
+	public String getUpdate_user() {
+		return update_user;
+	}
+	public void setUpdate_user(String update_user) {
+		this.update_user = update_user;
+	}
+	
+	
+}

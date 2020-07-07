@@ -1,0 +1,119 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>divide skill 메인페이지</title>
+
+	<link rel="stylesheet" href="/resources/css/divide/divideMain.css">	
+	
+	<!-- font Awesome -->
+	<link rel="stylesheet" href="/resources/css/fontawesome/all.css">
+
+<style>
+	 .divideBoby{
+			background-image: url('/resources/images/Positive.jpg');
+			
+	}
+ 
+ 	.skill_menu{
+ 		background-color: antiquewhite;
+ 		text-align: center;
+ 	}
+</style>
+
+
+</head>
+<body class = "divideBoby"> <!-- class = "divideBoby" -->
+	
+	<!-- 스크롤 codepen import -->
+	
+	<div class="container">
+    <header>
+        <h1 align = "center">
+           	기능 모음집
+        </h1>        
+        	<a href = "/insertDivide">기능등록</a>
+    </header>
+    
+	<div>
+	<ul class="swatch-list">
+		<li class="swatch">
+			<div class="swatch-color color-ruby"><a onclick = "letgo('login')"><img src = "/resources/images/divide/Login.PNG" style = "width: 200px; cursor: pointer;"></a></div>
+			<div class="skill_menu">
+				<p style = "height:35px;">로그인기능<br>Mr.Young Gyu</p>				
+			</div>
+		</li>
+		<li class="swatch">
+			<div class="swatch-color color-grapefruit"><a onclick = "alert('서비스 준비중입니다.')"><img src = "/resources/images/divide/JOIN.PNG" style = "width: 200px; height:182px; cursor: pointer;"></a></div>
+			<div class="skill_menu">		
+				<p style = "height:35px;">회원가입 기능<br>Mr.Young Gyu</p>
+				
+			</div>
+		</li>
+		<li class="swatch">
+			<div class="swatch-color color-bittersweet">
+				<iframe id="player" type="text/html" width="100%" height="100%" 
+				 src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"  frameborder="0"
+				 allowfullscreen="allowfullscreen"
+        		 mozallowfullscreen="mozallowfullscreen" 
+        		 msallowfullscreen="msallowfullscreen" 
+        		 oallowfullscreen="oallowfullscreen" 
+        		 webkitallowfullscreen="webkitallowfullscreen"></iframe>
+<!-- 				<a onclick = "letgo('login')"><img src = "/resources/images/divide/Login.PNG" style = "width: 200px; cursor: pointer;"></a> -->
+			</div>
+			<div class="swatch-info">
+				<p>Bittersweet</p>
+				<p>#FC6E51</p>
+				<p>rgb(252,110,81)</p>
+			</div>
+		</li>
+		<li class="swatch">
+			<iframe id="ifLogin" src="http://localhost:8080/divide?param=login" type="text/html" frameborder="0" scrolling="no" sandbox="allow-scripts allow-pointer-lock allow-same-origin" tabindex="-1" ></iframe>
+			<div class="swatch-color color-grapefruit"></div>
+			<div class="skill_menu">		
+				<p style = "height:35px;">와토펜<br>WATO</p>
+				
+			</div>
+		</li> 
+		<li class="swatch">
+			<div class="swatch-color color-sunflower"></div>
+			<div class="swatch-info">
+				<p>Sunflower</p>
+				<p>#FFCE54</p>
+				<p>rgb(255,206,84)</p>
+			</div>
+		</li>
+		
+	</ul>
+	</div>
+	
+</div>
+	
+</body>
+
+	<script>
+	
+		function letgo(param){
+		
+			if(param == 'login'){
+				location.href = "/divide?param="+param;
+			}else{
+				alert('안들어옴');
+			}
+			
+		}
+	
+	
+	</script>
+
+
+
+
+
+
+
+
+
+</html>

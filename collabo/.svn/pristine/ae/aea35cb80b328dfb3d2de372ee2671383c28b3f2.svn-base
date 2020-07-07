@@ -1,0 +1,19 @@
+package collabo.wato.springboot.web.hotPlace.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+import collabo.wato.springboot.web.hotPlace.vo.MemberVO;
+
+@Repository
+@Mapper
+public interface MemberMapper {
+
+	List<MemberVO> getMemberList();
+
+	String getMember(MemberVO vo);
+
+	void insertMember(MemberVO vo);
+}

@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>								
+<c:forEach var="data" items="${data }" varStatus="cnt">
+	${cnt.count}. 					<!-- cnt는 반복문을 횟수대로 수자를 표현 ex) 회원3명이면 1,2,3 이 출력 -->
+	${data.email}
+	${data.address}
+	${data.nickname}
+	<br/>
+</c:forEach>
+</body>
+</html>

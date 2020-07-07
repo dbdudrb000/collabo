@@ -1,0 +1,115 @@
+package collabo.wato.springboot.web.hotPlace;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import collabo.wato.springboot.web.hotPlace.service.AdministratorService;
+import collabo.wato.springboot.web.hotPlace.service.MemberService;
+import collabo.wato.springboot.web.hotPlace.service.PostService;
+import collabo.wato.springboot.web.hotPlace.vo.MemberVO;
+
+@Controller
+public class HotplaceController {
+	
+	@Autowired
+	MemberService memberService;
+	@Autowired
+	AdministratorService administratorService;
+	@Autowired
+	PostService postService;
+	
+	@RequestMapping(value = "/hotplace", method = RequestMethod.GET)
+	public String dongho(HttpServletResponse response, HttpServletRequest request) throws Exception{
+		
+		//List<MemberVO> membervoList = memberService.selectMemberList();
+		/*
+		 * List<MemberVO> membervoList = memberService.selectMemberList();
+		 * 
+		 * request.setAttribute("data",membervoList );
+		 */
+		return "main/test";
+	}
+		// 메인페이지에서 로그인창으로 페이지 이동을 해주는 controller
+	
+	@RequestMapping(value = "/loginView")
+	public String login(HttpServletResponse response, HttpServletRequest request) {
+		
+		return "main/login/loginView";
+	}
+	
+		//  로그인과정을 진행하는 controller
+	
+	@RequestMapping(value = "/loginLogic")
+	public String loginLogic(HttpServletResponse response, HttpServletRequest request) {
+		String email = request.getParameter("email");
+		String pw = request.getParameter("password");					  		 
+		
+//		if(리턴타입이 false 로그인이 실패 한거이니 실패창) { 
+//			return "main/login/loginFail";
+//		}
+		
+		return "main/mainView";
+		
+	}
+	
+		// 메인페이지를 보여주는  controller
+	@RequestMapping(value = "/mainView")
+	public String MainView(HttpServletResponse response, HttpServletRequest request) {
+		
+		return "main/mainView";
+		
+	}
+	
+	// 회원가입 창을 가는 controller
+	@RequestMapping(value = "/joinView")
+	public String join(HttpServletResponse response, HttpServletRequest request) {
+		System.out.println("지나감");
+		return "/main/join/joinView";
+		
+	}
+	
+	// 회원가입 하는 controller
+	@RequestMapping(value = "/joinLogic")
+	public String joinLogic(HttpServletRequest request, HttpServletResponse response) {
+		
+		String email = request.getParameter("email");
+		String pw = request.getParameter("password1");
+		String nickname = request.getParameter("nickname");
+		String address = request.getParameter("address");
+		
+		System.out.println(email);
+		System.out.println(pw);
+		System.out.println(nickname);
+		System.out.println(address);
+		
+		return "/main/join/joinResult";
+	}
+	
+	@RequestMapping(value = "/kakao")
+	public String kakao(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+
+		return "/main/kakaoMap/kakao";	
+	}
+	
+	@RequestMapping(value = "/menu")
+	public String menu(HttpServletRequest request, HttpServletResponse response) {
+		return "/main/kakaoMap/menuParameter";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

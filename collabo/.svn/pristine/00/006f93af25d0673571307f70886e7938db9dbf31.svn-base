@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="collabo.wato.springboot.web.hotPlace.mapper.MemberMapper">
+
+	<select id="getMemberList"	resultType="collabo.wato.springboot.web.hotPlace.vo.MemberVO">
+		SELECT email, nickname, password, address, available FROM "Hotplace".member
+	</select>
+
+	<select id="getMember"	resultType="collabo.wato.springboot.web.hotPlace.vo.MemberVO"
+		parameterType="collabo.wato.springboot.web.hotPlace.vo.MemberVO">
+		<!-- SELECT nickname, address, available from member where available=#{available} -->
+		select 'test' as name
+	</select>
+
+	<insert id="insertMember" parameterType="collabo.wato.springboot.web.hotPlace.vo.MemberVO">
+		INSERT INTO member
+		(
+		email, nickname, password, address
+		)
+		VALUES(
+		#{email}, #{nickname}, #{password}, #{address}
+		)
+	</insert>
+
+</mapper>
+

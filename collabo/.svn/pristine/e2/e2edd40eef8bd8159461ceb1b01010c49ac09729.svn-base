@@ -1,0 +1,72 @@
+package collabo.wato.springboot.web.board;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import collabo.wato.springboot.web.board.service.BoardService;
+import collabo.wato.springboot.web.board.vo.BoardVO;
+
+@Controller
+public class BoardController {
+
+	@Autowired
+	BoardService service;
+	
+	@RequestMapping("/board")
+	public String main() throws Exception {
+		return "/main/board/board";
+	}
+
+	@RequestMapping("/board/insert")
+	public String insert(HttpServletRequest request, HttpServletResponse Response) throws Exception {
+		String title = request.getParameter("title");
+		String address = request.getParameter("addrees");
+		String imgsrc = request.getParameter("imgsrc");
+		String feiling = request.getParameter("feiling");
+		String main = request.getParameter("main");
+		String dtAddress = request.getParameter("dtAddress");
+		
+		 String[] dtAddress2 = dtAddress.split("(" + "," + ")");
+		
+		BoardVO vo = new BoardVO();
+		vo.setTitle(title);
+		vo.setAddress(address);
+		vo.setBoard_address(main);// imgsrc
+		vo.setFeeling(feiling);
+		vo.setDetail(imgsrc); // main
+		vo.setLat(dtAddress2[1]);
+		vo.setLng(dtAddress2[0]);
+		System.out.println(dtAddress2[1]);
+		System.out.println(dtAddress2[0]);
+		
+		service.insertBoard(vo);
+		
+		return "redirect:/kakao";
+	}
+	@RequestMapping("/board/update")
+	public String update() throws Exception {
+		return "redirect:/kakao";
+	}
+	@RequestMapping("/board/delete")
+	public String delete() throws Exception {
+		return "redirect:/kakao";
+	}
+	
+	@RequestMapping("/board/allBoard")
+	public String select(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		BoardVO vo = new BoardVO();;
+		
+		List<BoardVO> boardList = service.selectBoard(vo);
+		
+		request.setAttribute("boardList", boardList);
+		
+		return "/main/board/allBoard";
+	}
+}

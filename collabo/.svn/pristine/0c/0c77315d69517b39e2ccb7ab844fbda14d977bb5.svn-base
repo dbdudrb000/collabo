@@ -1,0 +1,34 @@
+package collabo.wato.springboot.web.divideskill;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class divideController {
+	 
+	@RequestMapping("/divide")
+	public String main(HttpServletRequest request, HttpServletResponse response) {
+		
+		String param = request.getParameter("param");
+		
+		if("login".equals(param)) {
+			return "/main/divide_skill/divide_login";
+		}
+		
+		return "/main/divide_skill/divide_skill_main";
+	}
+	
+	@RequestMapping("/insertDivide")
+	public String insert(HttpServletRequest request, HttpServletResponse response) {
+		
+		
+		return "/main/divide_skill/divideInsert";
+	}
+	
+	
+}

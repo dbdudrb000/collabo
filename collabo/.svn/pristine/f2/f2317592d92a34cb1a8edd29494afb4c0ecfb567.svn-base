@@ -1,0 +1,72 @@
+package collabo.wato.springboot.web.board.vo;
+
+import collabo.wato.springboot.web.common.vo.CommonVO;
+
+public class BoardVO extends CommonVO{
+
+	private String boardid = "";
+	private String lat = "";
+	private String lng = "";
+	private String board_address = "";
+	private String address = "";
+	private String title = "";
+	private String detail = "";
+	private String feeling = "";
+	private String delyn = "";
+
+	public String getBoard_address() {
+		return board_address;
+	}
+	public void setBoard_address(String board_address) {
+		this.board_address = board_address;
+	}
+	public String getDelyn() {
+		return delyn;
+	}
+	public void setDelyn(String delyn) {
+		this.delyn = delyn;
+	}
+	public String getBoardid() {
+		return boardid;
+	}
+	public void setBoardid(String boardid) {
+		this.boardid = boardid;
+	}
+	public String getLat() {
+		return lat;
+	}
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+	public String getLng() {
+		return lng;
+	}
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDetail() {
+		return detail;
+	}
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+	public String getFeeling() {
+		return feeling;
+	}
+	public void setFeeling(String feeling) {
+		this.feeling = feeling;
+	}
+	
+}

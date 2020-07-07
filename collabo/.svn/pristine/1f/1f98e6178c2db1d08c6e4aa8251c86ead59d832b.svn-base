@@ -1,0 +1,29 @@
+package collabo.wato.springboot.web.divideskill.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import collabo.wato.springboot.web.divideskill.mapper.DivideMapper;
+import collabo.wato.springboot.web.divideskill.vo.DivideVO;
+
+@Service
+public class DivideServiceImpl implements DivideService{
+
+	@Autowired
+	DivideMapper mapper;
+	
+	@Override
+	public void insertDivide(DivideVO vo) throws Exception {
+		
+		 mapper.insertDivide(vo);	
+	}
+
+	@Override
+	public List<DivideVO> selectDivide(DivideVO vo) throws Exception {
+		
+		return mapper.selectDivide(vo);
+	}
+
+}
